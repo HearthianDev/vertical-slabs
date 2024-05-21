@@ -1,3 +1,2 @@
-# VerticalSlabs
-Minecraft fabric mod that adds vertical slabs to the game!
-They can even be waterlogged and rotated!
+# Vertical slabs
+Simple Fabric mod that adds vertical slabs of every normal slab variant.
