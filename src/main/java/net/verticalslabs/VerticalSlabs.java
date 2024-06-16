@@ -80,8 +80,8 @@ public class VerticalSlabs implements ModInitializer {
   }
 
   private void registerBlockItem(String path, Block block) {
-    Registry.register(Registries.BLOCK, new Identifier(MOD_ID, path), block);
-    Registry.register(Registries.ITEM, new Identifier(MOD_ID, path), new BlockItem(block, new Item.Settings()));
+    Registry.register(Registries.BLOCK, Identifier.of(MOD_ID, path), block);
+    Registry.register(Registries.ITEM, Identifier.of(MOD_ID, path), new BlockItem(block, new Item.Settings()));
   }
 
   private void initOxidizableChains() {
