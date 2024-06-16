@@ -1,9 +1,8 @@
-package net.verticalslabs.block;
+package net.HearthianDev.verticalslabs.block;
 
 import com.mojang.serialization.MapCodec;
-import net.verticalslabs.block.enums.VerticalSlabType;
+import net.HearthianDev.verticalslabs.block.enums.VerticalSlabType;
 import net.minecraft.block.*;
-import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
@@ -60,13 +59,13 @@ public class VerticalSlabBlock extends HorizontalFacingBlock implements Waterlog
     return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
   }
 
-  public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
-    if (Objects.requireNonNull(type) == NavigationType.WATER) {
-      return world.getFluidState(pos).isIn(FluidTags.WATER);
-    }
-
-    return false;
-  }
+//  public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
+//    if (Objects.requireNonNull(type) == NavigationType.WATER) {
+//      return world.getFluidState(pos).isIn(FluidTags.WATER);
+//    }
+//
+//    return false;
+//  }
 
   @Override
   public BlockRenderType getRenderType(BlockState blockState) {

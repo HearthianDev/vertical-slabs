@@ -43,6 +43,9 @@
     "verticalslabs:vertical_waxed_cut_copper_slab",
     "verticalslabs:vertical_waxed_exposed_cut_copper_slab",
     "verticalslabs:vertical_waxed_weathered_cut_copper_slab",
-    "verticalslabs:vertical_waxed_oxidized_cut_copper_slab"
+    "verticalslabs:vertical_waxed_oxidized_cut_copper_slab",
+    "verticalslabs:vertical_tuff_slab",
+    "verticalslabs:vertical_tuff_brick_slab",
+    "verticalslabs:vertical_polished_tuff_slab"
   ]
 }

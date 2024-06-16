@@ -1,4 +1,4 @@
-package net.verticalslabs;
+package net.HearthianDev.verticalslabs;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -9,7 +9,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-import static net.verticalslabs.block.VerticalSlabBlocks.*;
+import static net.HearthianDev.verticalslabs.block.VerticalSlabBlocks.*;
 
 public class VerticalSlabs implements ModInitializer {
   public static final String MOD_ID = "verticalslabs";
@@ -74,6 +74,10 @@ public class VerticalSlabs implements ModInitializer {
     registerBlockItem("vertical_waxed_exposed_cut_copper_slab", VERTICAL_WAXED_EXPOSED_CUT_COPPER_SLAB);
     registerBlockItem("vertical_waxed_weathered_cut_copper_slab", VERTICAL_WAXED_WEATHERED_CUT_COPPER_SLAB);
     registerBlockItem("vertical_waxed_oxidized_cut_copper_slab", VERTICAL_WAXED_OXIDIZED_CUT_COPPER_SLAB);
+
+    registerBlockItem("vertical_tuff_slab", VERTICAL_TUFF_SLAB);
+    registerBlockItem("vertical_tuff_brick_slab", VERTICAL_TUFF_BRICK_SLAB);
+    registerBlockItem("vertical_polished_tuff_slab", VERTICAL_POLISHED_TUFF_SLAB);
 
     initOxidizableChains();
     initCreativePlacement();
@@ -152,6 +156,10 @@ public class VerticalSlabs implements ModInitializer {
       content.addBefore(Items.BAMBOO_SLAB, VERTICAL_BAMBOO_SLAB);
       content.addBefore(Items.BAMBOO_MOSAIC_SLAB, VERTICAL_BAMBOO_MOSAIC_SLAB);
       content.addBefore(Items.MUD_BRICK_SLAB, VERTICAL_MUD_BRICK_SLAB);
+
+      content.addBefore(Items.TUFF_SLAB, VERTICAL_TUFF_SLAB);
+      content.addBefore(Items.TUFF_BRICK_SLAB, VERTICAL_TUFF_BRICK_SLAB);
+      content.addBefore(Items.POLISHED_TUFF_SLAB, VERTICAL_POLISHED_TUFF_SLAB);
     });
   }
 }

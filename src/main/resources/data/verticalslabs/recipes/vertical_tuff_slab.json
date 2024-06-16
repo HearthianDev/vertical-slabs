@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:tuff_slab"
+        }
+    ],
+    "result": {
+        "id": "verticalslabs:vertical_tuff_slab"
+    }
+}

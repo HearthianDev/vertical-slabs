@@ -1,4 +1,4 @@
-package net.verticalslabs.block;
+package net.HearthianDev.verticalslabs.block;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -56,7 +56,6 @@ public class VerticalSlabBlocks {
   public static final Block VERTICAL_DEEPSLATE_BRICK_SLAB = new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.DEEPSLATE_BRICK_SLAB).sounds(BlockSoundGroup.STONE).hardness(2f).requiresTool());
   public static final Block VERTICAL_DEEPSLATE_TILE_SLAB = new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.DEEPSLATE_TILE_SLAB).sounds(BlockSoundGroup.STONE).hardness(2f).requiresTool());
   public static final Block VERTICAL_MUD_BRICK_SLAB = new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICK_SLAB).sounds(BlockSoundGroup.MUD_BRICKS).hardness(2f).requiresTool());
-
   public static final Block VERTICAL_CUT_COPPER_SLAB = new CopperVerticalSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, AbstractBlock.Settings.copy(Blocks.CUT_COPPER_SLAB).sounds(BlockSoundGroup.METAL).hardness(2f).requiresTool());
   public static final Block VERTICAL_EXPOSED_CUT_COPPER_SLAB = new CopperVerticalSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, AbstractBlock.Settings.copy(Blocks.EXPOSED_CUT_COPPER_SLAB).sounds(BlockSoundGroup.METAL).hardness(2f).requiresTool());
   public static final Block VERTICAL_WEATHERED_CUT_COPPER_SLAB = new CopperVerticalSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, AbstractBlock.Settings.copy(Blocks.WEATHERED_CUT_COPPER_SLAB).sounds(BlockSoundGroup.METAL).hardness(2f).requiresTool());
@@ -65,5 +64,7 @@ public class VerticalSlabBlocks {
   public static final Block VERTICAL_WAXED_EXPOSED_CUT_COPPER_SLAB = new CopperVerticalSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, AbstractBlock.Settings.copy(Blocks.WAXED_EXPOSED_CUT_COPPER_SLAB).sounds(BlockSoundGroup.METAL).hardness(2f).requiresTool());
   public static final Block VERTICAL_WAXED_WEATHERED_CUT_COPPER_SLAB = new CopperVerticalSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, AbstractBlock.Settings.copy(Blocks.WAXED_WEATHERED_CUT_COPPER_SLAB).sounds(BlockSoundGroup.METAL).hardness(2f).requiresTool());
   public static final Block VERTICAL_WAXED_OXIDIZED_CUT_COPPER_SLAB = new CopperVerticalSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, AbstractBlock.Settings.copy(Blocks.WAXED_OXIDIZED_CUT_COPPER_SLAB).sounds(BlockSoundGroup.METAL).hardness(2f).requiresTool());
+  public static final Block VERTICAL_TUFF_SLAB = new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.TUFF_SLAB).sounds(BlockSoundGroup.MUD_BRICKS).hardness(2f).requiresTool());
+  public static final Block VERTICAL_TUFF_BRICK_SLAB = new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.TUFF_BRICK_SLAB).sounds(BlockSoundGroup.MUD_BRICKS).hardness(2f).requiresTool());
+  public static final Block VERTICAL_POLISHED_TUFF_SLAB = new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.POLISHED_TUFF_SLAB).sounds(BlockSoundGroup.MUD_BRICKS).hardness(2f).requiresTool());
 }
-

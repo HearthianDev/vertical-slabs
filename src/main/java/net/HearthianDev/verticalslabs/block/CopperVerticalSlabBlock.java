@@ -1,4 +1,4 @@
-package net.verticalslabs.block;
+package net.HearthianDev.verticalslabs.block;
 
 import net.minecraft.block.*;
 import net.minecraft.server.world.ServerWorld;

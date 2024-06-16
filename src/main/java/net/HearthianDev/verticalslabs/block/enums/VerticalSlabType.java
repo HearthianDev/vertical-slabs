@@ -1,4 +1,4 @@
-package net.verticalslabs.block.enums;
+package net.HearthianDev.verticalslabs.block.enums;
 
 import net.minecraft.util.StringIdentifiable;
 

@@ -50,9 +50,13 @@
 	"block.verticalslabs.vertical_waxed_exposed_cut_copper_slab":"Losa de cobre cortado expuesto encerado vertical",
 	"block.verticalslabs.vertical_waxed_weathered_cut_copper_slab":"Losa de cobre cortado degradado encerado vertical",
 	"block.verticalslabs.vertical_waxed_oxidized_cut_copper_slab":"Losa de cobre cortado oxidado encerado vertical",
-  "block.verticalslabs.vertical_mangrove_slab":"Losa de mangle vertical",
-  "block.verticalslabs.vertical_cherry_slab":"Losa de cerezo vertical",
-  "block.verticalslabs.vertical_bamboo_slab":"Losa de bambú vertical",
-  "block.verticalslabs.vertical_bamboo_mosaic_slab":"Losa de mosaico de bambú vertical",
-  "block.verticalslabs.vertical_mud_brick_slab":"Losa de ladrillos de adobe vertical"
+	"block.verticalslabs.vertical_mangrove_slab":"Losa de mangle vertical",
+	"block.verticalslabs.vertical_cherry_slab":"Losa de cerezo vertical",
+	"block.verticalslabs.vertical_bamboo_slab":"Losa de bambú vertical",
+	"block.verticalslabs.vertical_bamboo_mosaic_slab":"Losa de mosaico de bambú vertical",
+	"block.verticalslabs.vertical_mud_brick_slab":"Losa de ladrillos de adobe vertical",
+
+	"block.verticalslabs.vertical_tuff_slab":"Losa de toba vertical",
+	"block.verticalslabs.vertical_tuff_brick_slab":"Losa de ladrillos de toba vertical",
+	"block.verticalslabs.vertical_polished_tuff_slab":"Losa de toba pulida vertical"
 }
