@@ -3,7 +3,7 @@
 	"id": "vertical-slabs",
 	"version": "${version}",
 	"name": "Vertical slabs",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Vertical slabs for each vanilla slab",
 	"authors": [
 		"John-Development"
 	],
