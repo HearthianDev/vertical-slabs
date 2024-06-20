@@ -8,7 +8,6 @@ import net.minecraft.data.client.*;
 import net.minecraft.item.Items;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.Optional;
 

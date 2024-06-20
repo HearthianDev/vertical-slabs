@@ -1,7 +1,6 @@
 package net.HearthianDev.verticalslabs.block.blocks;
 
 import net.HearthianDev.verticalslabs.block.CopperVerticalSlabBlock;
-import net.HearthianDev.verticalslabs.block.VerticalSlabBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;

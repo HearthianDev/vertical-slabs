@@ -11,7 +11,6 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.Optional;
 

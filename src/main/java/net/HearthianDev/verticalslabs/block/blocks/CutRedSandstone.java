@@ -1,11 +1,9 @@
 package net.HearthianDev.verticalslabs.block.blocks;
 
-import net.HearthianDev.verticalslabs.block.CopperVerticalSlabBlock;
 import net.HearthianDev.verticalslabs.block.VerticalSlabBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.Oxidizable;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.Model;
 import net.minecraft.data.client.TextureKey;
