@@ -1,7 +1,0 @@
-{
-  "parent": "verticalslabs:block/vertical_slab_column",
-  "textures": {
-    "end": "minecraft:block/quartz_block_top",
-    "side": "minecraft:block/quartz_block_side"
-  }
-}

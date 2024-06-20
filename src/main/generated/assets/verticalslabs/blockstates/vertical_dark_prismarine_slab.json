@@ -1,0 +1,55 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "verticalslabs:block/vertical_dark_prismarine_slab",
+        "uvlock": true
+      },
+      "when": {
+        "type": "half",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "verticalslabs:block/vertical_dark_prismarine_slab",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "type": "half",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "verticalslabs:block/vertical_dark_prismarine_slab",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "type": "half",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "verticalslabs:block/vertical_dark_prismarine_slab",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "type": "half",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "minecraft:block/dark_prismarine"
+      },
+      "when": {
+        "type": "double"
+      }
+    }
+  ]
+}

@@ -15,6 +15,9 @@
 	"icon": "assets/verticalslabs/icon.png",
 	"environment": "*",
 	"entrypoints": {
+		"fabric-datagen": [
+			"net.HearthianDev.verticalslabs.VerticalSlabsDataGenerator"
+		],
 		"main": [
 			"net.HearthianDev.verticalslabs.VerticalSlabs"
 		],
