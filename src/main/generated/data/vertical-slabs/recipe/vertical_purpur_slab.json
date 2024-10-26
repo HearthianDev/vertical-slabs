@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_purpur_slab",
   "key": {
-    "#": {
-      "item": "minecraft:purpur_block"
-    }
+    "#": "minecraft:purpur_block"
   },
   "pattern": [
     " # ",

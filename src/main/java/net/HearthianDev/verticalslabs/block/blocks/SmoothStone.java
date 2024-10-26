@@ -7,6 +7,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.item.Items;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
@@ -14,10 +16,17 @@ import net.minecraft.util.math.Direction;
 
 import java.util.Optional;
 
+import static net.HearthianDev.verticalslabs.VerticalSlabs.MOD_ID;
 import static net.HearthianDev.verticalslabs.VerticalSlabs.registerBlockItem;
 
 public class SmoothStone extends AbstractVerticalSlabBlock {
-    public static final Block VERTICAL_SLAB = new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE_SLAB).sounds(BlockSoundGroup.STONE).hardness(2f).requiresTool());
+    public static final Block VERTICAL_SLAB = new VerticalSlabBlock(
+            AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE_SLAB)
+                    .sounds(BlockSoundGroup.STONE)
+                    .hardness(2f)
+                    .requiresTool()
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "vertical_smooth_stone_slab")))
+    );
 
     public SmoothStone() {
         super("vertical_smooth_stone_slab", VERTICAL_SLAB, "smooth_stone_slab_double", Items.SMOOTH_STONE, Items.SMOOTH_STONE_SLAB);

@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_red_sandstone_slab",
   "key": {
-    "#": {
-      "item": "minecraft:red_sandstone"
-    }
+    "#": "minecraft:red_sandstone"
   },
   "pattern": [
     " # ",

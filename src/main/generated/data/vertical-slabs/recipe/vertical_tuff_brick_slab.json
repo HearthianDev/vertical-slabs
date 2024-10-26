@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_tuff_brick_slab",
   "key": {
-    "#": {
-      "item": "minecraft:tuff_bricks"
-    }
+    "#": "minecraft:tuff_bricks"
   },
   "pattern": [
     " # ",

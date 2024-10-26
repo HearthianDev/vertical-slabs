@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_polished_tuff_slab",
   "key": {
-    "#": {
-      "item": "minecraft:tuff"
-    }
+    "#": "minecraft:tuff"
   },
   "pattern": [
     " # ",

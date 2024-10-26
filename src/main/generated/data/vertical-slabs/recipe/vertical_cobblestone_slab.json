@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_cobblestone_slab",
   "key": {
-    "#": {
-      "item": "minecraft:cobblestone"
-    }
+    "#": "minecraft:cobblestone"
   },
   "pattern": [
     " # ",

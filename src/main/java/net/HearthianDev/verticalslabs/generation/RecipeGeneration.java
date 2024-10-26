@@ -17,21 +17,31 @@ public class RecipeGeneration extends FabricRecipeProvider {
     }
 
     @Override
-    public void generate(RecipeExporter exporter) {
-        for (AbstractVerticalSlabBlock block : BLOCKS) {
-            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, block.VERTICAL_SLAB, 6)
-                    .pattern(" # ")
-                    .pattern(" # ")
-                    .pattern(" # ")
-                    .input('#', block.PARENT)
-                    .group(CraftingRecipeJsonBuilder.getItemId(block.VERTICAL_SLAB).toString())
-                    .criterion(FabricRecipeProvider.hasItem(block.PARENT), FabricRecipeProvider.conditionsFromItem(block.PARENT))
-                    .offerTo(exporter);
+    protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup wrapperLookup, RecipeExporter recipeExporter) {
+        return new RecipeGenerator(wrapperLookup, recipeExporter) {
+            @Override
+            public void generate() {
+                for (AbstractVerticalSlabBlock block : BLOCKS) {
+                    createShaped(RecipeCategory.BUILDING_BLOCKS, block.VERTICAL_SLAB.asItem(), 6)
+                            .pattern(" # ")
+                            .pattern(" # ")
+                            .pattern(" # ")
+                            .input('#', block.PARENT)
+                            .group(CraftingRecipeJsonBuilder.getItemId(block.VERTICAL_SLAB).toString())
+                            .criterion(hasItem(block.PARENT), conditionsFromItem(block.PARENT))
+                            .offerTo(exporter);
 
-            if (block.isCuttable) {
-                // Stonecutter recipes
-                RecipeProvider.offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, block.VERTICAL_SLAB, block.PARENT, 2);
+                    if (block.isCuttable) {
+                        // Stonecutter recipes
+                        offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, block.VERTICAL_SLAB.asItem(), block.PARENT.asItem(), 2);
+                    }
+                }
             }
-        }
+        };
+    }
+
+    @Override
+    public String getName() {
+        return "";
     }
 }

@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_polished_granite_slab",
   "key": {
-    "#": {
-      "item": "minecraft:polished_granite"
-    }
+    "#": "minecraft:polished_granite"
   },
   "pattern": [
     " # ",

@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_diorite_slab",
   "key": {
-    "#": {
-      "item": "minecraft:diorite"
-    }
+    "#": "minecraft:diorite"
   },
   "pattern": [
     " # ",

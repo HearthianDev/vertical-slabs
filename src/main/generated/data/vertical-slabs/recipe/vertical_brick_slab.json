@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_brick_slab",
   "key": {
-    "#": {
-      "item": "minecraft:bricks"
-    }
+    "#": "minecraft:bricks"
   },
   "pattern": [
     " # ",

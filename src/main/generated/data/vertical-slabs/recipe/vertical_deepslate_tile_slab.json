@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_deepslate_tile_slab",
   "key": {
-    "#": {
-      "item": "minecraft:deepslate_tiles"
-    }
+    "#": "minecraft:deepslate_tiles"
   },
   "pattern": [
     " # ",

@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_polished_blackstone_brick_slab",
   "key": {
-    "#": {
-      "item": "minecraft:polished_blackstone_bricks"
-    }
+    "#": "minecraft:polished_blackstone_bricks"
   },
   "pattern": [
     " # ",

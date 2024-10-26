@@ -5,12 +5,21 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Identifier;
 
+import static net.HearthianDev.verticalslabs.VerticalSlabs.MOD_ID;
 import static net.HearthianDev.verticalslabs.VerticalSlabs.registerBlockItem;
 
 public class OakPlanks extends AbstractVerticalSlabBlock {
-    public static final Block VERTICAL_SLAB = new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_SLAB).sounds(BlockSoundGroup.WOOD).hardness(2f));
+    public static final Block VERTICAL_SLAB = new VerticalSlabBlock(
+            AbstractBlock.Settings.copy(Blocks.OAK_SLAB)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .hardness(2f)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "vertical_oak_slab")))
+    );
 
     public OakPlanks() {
         super("vertical_oak_slab", VERTICAL_SLAB, "oak_planks", Items.OAK_PLANKS, Items.OAK_SLAB, false);

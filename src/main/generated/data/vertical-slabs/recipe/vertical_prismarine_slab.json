@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_prismarine_slab",
   "key": {
-    "#": {
-      "item": "minecraft:prismarine"
-    }
+    "#": "minecraft:prismarine"
   },
   "pattern": [
     " # ",

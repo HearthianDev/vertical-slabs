@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_cut_sandstone_slab",
   "key": {
-    "#": {
-      "item": "minecraft:cut_sandstone"
-    }
+    "#": "minecraft:cut_sandstone"
   },
   "pattern": [
     " # ",

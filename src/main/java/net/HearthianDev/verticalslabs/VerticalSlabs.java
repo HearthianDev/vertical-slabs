@@ -5,9 +5,12 @@ import net.HearthianDev.verticalslabs.block.blocks.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
+import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public class VerticalSlabs implements ModInitializer {
@@ -83,8 +86,11 @@ public class VerticalSlabs implements ModInitializer {
 
 
   public static void registerBlockItem(String path, AbstractVerticalSlabBlock block) {
-    Registry.register(Registries.BLOCK, Identifier.of(MOD_ID, path), block.VERTICAL_SLAB);
-    Registry.register(Registries.ITEM, Identifier.of(MOD_ID, path), new BlockItem(block.VERTICAL_SLAB, new Item.Settings()));
+    RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, path));
+    RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, path));
+
+    Registry.register(Registries.BLOCK, blockKey, block.VERTICAL_SLAB);
+    Registry.register(Registries.ITEM, itemKey, new BlockItem(block.VERTICAL_SLAB, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(itemKey)));
   }
 
   private void initOxidizableChains() {

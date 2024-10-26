@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_spruce_slab",
   "key": {
-    "#": {
-      "item": "minecraft:spruce_planks"
-    }
+    "#": "minecraft:spruce_planks"
   },
   "pattern": [
     " # ",

@@ -5,12 +5,21 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.Identifier;
 
+import static net.HearthianDev.verticalslabs.VerticalSlabs.MOD_ID;
 import static net.HearthianDev.verticalslabs.VerticalSlabs.registerBlockItem;
 
 public class JunglePlanks extends AbstractVerticalSlabBlock {
-    public static final Block VERTICAL_SLAB = new VerticalSlabBlock(AbstractBlock.Settings.copy(Blocks.JUNGLE_SLAB).sounds(BlockSoundGroup.WOOD).hardness(2f));
+    public static final Block VERTICAL_SLAB = new VerticalSlabBlock(
+            AbstractBlock.Settings.copy(Blocks.JUNGLE_SLAB)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .hardness(2f)
+                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "vertical_jungle_slab")))
+    );
 
     public JunglePlanks() {
         super("vertical_jungle_slab", VERTICAL_SLAB, "jungle_planks", Items.JUNGLE_PLANKS, Items.JUNGLE_SLAB, false);

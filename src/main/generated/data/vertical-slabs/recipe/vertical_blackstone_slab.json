@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_blackstone_slab",
   "key": {
-    "#": {
-      "item": "minecraft:blackstone"
-    }
+    "#": "minecraft:blackstone"
   },
   "pattern": [
     " # ",

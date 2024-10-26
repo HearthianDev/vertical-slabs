@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_oak_slab",
   "key": {
-    "#": {
-      "item": "minecraft:oak_planks"
-    }
+    "#": "minecraft:oak_planks"
   },
   "pattern": [
     " # ",

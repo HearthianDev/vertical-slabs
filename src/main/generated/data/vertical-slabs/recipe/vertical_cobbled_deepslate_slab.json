@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_cobbled_deepslate_slab",
   "key": {
-    "#": {
-      "item": "minecraft:cobbled_deepslate"
-    }
+    "#": "minecraft:cobbled_deepslate"
   },
   "pattern": [
     " # ",

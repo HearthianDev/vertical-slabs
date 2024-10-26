@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_acacia_slab",
   "key": {
-    "#": {
-      "item": "minecraft:acacia_planks"
-    }
+    "#": "minecraft:acacia_planks"
   },
   "pattern": [
     " # ",

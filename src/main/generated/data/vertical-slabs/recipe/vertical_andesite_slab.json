@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_andesite_slab",
   "key": {
-    "#": {
-      "item": "minecraft:andesite"
-    }
+    "#": "minecraft:andesite"
   },
   "pattern": [
     " # ",

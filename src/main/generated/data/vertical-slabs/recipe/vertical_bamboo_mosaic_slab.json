@@ -3,9 +3,7 @@
   "category": "building",
   "group": "verticalslabs:vertical_bamboo_mosaic_slab",
   "key": {
-    "#": {
-      "item": "minecraft:bamboo_mosaic"
-    }
+    "#": "minecraft:bamboo_mosaic"
   },
   "pattern": [
     " # ",
