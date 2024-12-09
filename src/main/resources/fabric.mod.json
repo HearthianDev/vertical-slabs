@@ -21,7 +21,9 @@
 		"main": [
 			"net.HearthianDev.verticalslabs.VerticalSlabs"
 		],
-		"client": []
+		"client": [
+			"net.HearthianDev.verticalslabs.VerticalSlabsClient"
+		]
 	},
 	"mixins": [],
 	"depends": {

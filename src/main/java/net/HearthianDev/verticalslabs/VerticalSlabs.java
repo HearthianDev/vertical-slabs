@@ -1,12 +1,14 @@
 package net.HearthianDev.verticalslabs;
 
-import net.HearthianDev.verticalslabs.block.blocks.OakPlanks;
-import net.HearthianDev.verticalslabs.block.blocks.*;
+import net.HearthianDev.verticalslabs.block.blockInit.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.item.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -16,81 +18,79 @@ import net.minecraft.util.Identifier;
 public class VerticalSlabs implements ModInitializer {
   public static final String MOD_ID = "verticalslabs";
 
-  public static AbstractVerticalSlabBlock[] BLOCKS = {
-          new AcaciaPlanks(),
-          new Andesite(),
-          new BambooMosaic(),
-          new BambooPlanks(),
-          new BirchPlanks(),
-          new Blackstone(),
-          new Bricks(),
-          new CherryPlanks(),
-          new CobbledDeepslate(),
-          new Cobblestone(),
-          new CrimsomPlanks(),
-          new CutCopper(),
-          new CutRedSandstone(),
-          new CutSandstone(),
-          new DarkOakPlanks(),
-          new DarkPrismarine(),
-          new DeepslateBricks(),
-          new DeepslateTiles(),
-          new Diorite(),
-          new EndStoneBricks(),
-          new ExposedCutCopper(),
-          new Granite(),
-          new JunglePlanks(),
-          new MangrovePlanks(),
-          new MossyCobblestone(),
-          new MossyStoneBricks(),
-          new MudBricks(),
-          new NetherBricks(),
-          new OakPlanks(),
-          new OxidizedCutCopper(),
-          new PolishedAndesite(),
-          new PolishedBlackstone(),
-          new PolishedBlackstoneBricks(),
-          new PolishedDeepslate(),
-          new PolishedDiorite(),
-          new PolishedGranite(),
-          new PolishedTuff(),
-          new Prismarine(),
-          new PrismarineBricks(),
-          new Purpur(),
-          new Quartz(),
-          new RedNetherBricks(),
-          new RedSandstone(),
-          new Sandstone(),
-          new SmoothQuartz(),
-          new SmoothRedSandstone(),
-          new SmoothSandstone(),
-          new SmoothStone(),
-          new SprucePlanks(),
-          new Stone(),
-          new StoneBricks(),
-          new Tuff(),
-          new TuffBricks(),
-          new WarpedPlanks(),
-          new WaxedCutCopper(),
-          new WaxedExposedCutCopper(),
-          new WaxedOxidizedCutCopper(),
-          new WaxedWeatheredCutCopper(),
-          new WeatheredCutCopper()
-  };
-
   @Override
   public void onInitialize() {
+    registerBlockItem(AcaciaPlanks.ID, AcaciaPlanks.VERTICAL_SLAB);
+    registerBlockItem(Andesite.ID, Andesite.VERTICAL_SLAB);
+    registerBlockItem(BambooMosaic.ID, BambooMosaic.VERTICAL_SLAB);
+    registerBlockItem(BambooPlanks.ID, BambooPlanks.VERTICAL_SLAB);
+    registerBlockItem(BirchPlanks.ID, BirchPlanks.VERTICAL_SLAB);
+    registerBlockItem(Blackstone.ID, Blackstone.VERTICAL_SLAB);
+    registerBlockItem(Bricks.ID, Bricks.VERTICAL_SLAB);
+    registerBlockItem(CherryPlanks.ID, CherryPlanks.VERTICAL_SLAB);
+    registerBlockItem(CobbledDeepslate.ID, CobbledDeepslate.VERTICAL_SLAB);
+    registerBlockItem(Cobblestone.ID, Cobblestone.VERTICAL_SLAB);
+    registerBlockItem(CrimsomPlanks.ID, CrimsomPlanks.VERTICAL_SLAB);
+    registerBlockItem(CutCopper.ID, CutCopper.VERTICAL_SLAB);
+    registerBlockItem(CutRedSandstone.ID, CutRedSandstone.VERTICAL_SLAB);
+    registerBlockItem(CutSandstone.ID, CutSandstone.VERTICAL_SLAB);
+    registerBlockItem(DarkOakPlanks.ID, DarkOakPlanks.VERTICAL_SLAB);
+    registerBlockItem(DarkPrismarine.ID, DarkPrismarine.VERTICAL_SLAB);
+    registerBlockItem(DeepslateBricks.ID, DeepslateBricks.VERTICAL_SLAB);
+    registerBlockItem(DeepslateTiles.ID, DeepslateTiles.VERTICAL_SLAB);
+    registerBlockItem(Diorite.ID, Diorite.VERTICAL_SLAB);
+    registerBlockItem(EndStoneBricks.ID, EndStoneBricks.VERTICAL_SLAB);
+    registerBlockItem(ExposedCutCopper.ID, ExposedCutCopper.VERTICAL_SLAB);
+    registerBlockItem(Granite.ID, Granite.VERTICAL_SLAB);
+    registerBlockItem(JunglePlanks.ID, JunglePlanks.VERTICAL_SLAB);
+    registerBlockItem(MangrovePlanks.ID, MangrovePlanks.VERTICAL_SLAB);
+    registerBlockItem(MossyCobblestone.ID, MossyCobblestone.VERTICAL_SLAB);
+    registerBlockItem(MossyStoneBricks.ID, MossyStoneBricks.VERTICAL_SLAB);
+    registerBlockItem(MudBricks.ID, MudBricks.VERTICAL_SLAB);
+    registerBlockItem(NetherBricks.ID, NetherBricks.VERTICAL_SLAB);
+    registerBlockItem(OakPlanks.ID, OakPlanks.VERTICAL_SLAB);
+    registerBlockItem(OxidizedCutCopper.ID, OxidizedCutCopper.VERTICAL_SLAB);
+    registerBlockItem(PolishedAndesite.ID, PolishedAndesite.VERTICAL_SLAB);
+    registerBlockItem(PolishedBlackstone.ID, PolishedBlackstone.VERTICAL_SLAB);
+    registerBlockItem(PolishedBlackstoneBricks.ID, PolishedBlackstoneBricks.VERTICAL_SLAB);
+    registerBlockItem(PolishedDeepslate.ID, PolishedDeepslate.VERTICAL_SLAB);
+    registerBlockItem(PolishedDiorite.ID, PolishedDiorite.VERTICAL_SLAB);
+    registerBlockItem(PolishedGranite.ID, PolishedGranite.VERTICAL_SLAB);
+    registerBlockItem(PolishedTuff.ID, PolishedTuff.VERTICAL_SLAB);
+    registerBlockItem(Prismarine.ID, Prismarine.VERTICAL_SLAB);
+    registerBlockItem(PrismarineBricks.ID, PrismarineBricks.VERTICAL_SLAB);
+    registerBlockItem(Purpur.ID, Purpur.VERTICAL_SLAB);
+    registerBlockItem(Quartz.ID, Quartz.VERTICAL_SLAB);
+    registerBlockItem(RedNetherBricks.ID, RedNetherBricks.VERTICAL_SLAB);
+    registerBlockItem(RedSandstone.ID, RedSandstone.VERTICAL_SLAB);
+    registerBlockItem(ResinBricks.ID, ResinBricks.VERTICAL_SLAB);
+    registerBlockItem(Sandstone.ID, Sandstone.VERTICAL_SLAB);
+    registerBlockItem(SmoothQuartz.ID, SmoothQuartz.VERTICAL_SLAB);
+    registerBlockItem(SmoothRedSandstone.ID, SmoothRedSandstone.VERTICAL_SLAB);
+    registerBlockItem(SmoothSandstone.ID, SmoothSandstone.VERTICAL_SLAB);
+    registerBlockItem(SmoothStone.ID, SmoothStone.VERTICAL_SLAB);
+    registerBlockItem(SprucePlanks.ID, SprucePlanks.VERTICAL_SLAB);
+    registerBlockItem(Stone.ID, Stone.VERTICAL_SLAB);
+    registerBlockItem(StoneBricks.ID, StoneBricks.VERTICAL_SLAB);
+    registerBlockItem(Tuff.ID, Tuff.VERTICAL_SLAB);
+    registerBlockItem(TuffBricks.ID, TuffBricks.VERTICAL_SLAB);
+    registerBlockItem(WarpedPlanks.ID, WarpedPlanks.VERTICAL_SLAB);
+    registerBlockItem(WaxedCutCopper.ID, WaxedCutCopper.VERTICAL_SLAB);
+    registerBlockItem(WaxedExposedCutCopper.ID, WaxedExposedCutCopper.VERTICAL_SLAB);
+    registerBlockItem(WaxedOxidizedCutCopper.ID, WaxedOxidizedCutCopper.VERTICAL_SLAB);
+    registerBlockItem(WaxedWeatheredCutCopper.ID, WaxedWeatheredCutCopper.VERTICAL_SLAB);
+    registerBlockItem(WeatheredCutCopper.ID, WeatheredCutCopper.VERTICAL_SLAB);
+
     initOxidizableChains();
     initCreativePlacement();
   }
 
-
-  public static void registerBlockItem(String path, AbstractVerticalSlabBlock block) {
+  public static void registerBlockItem(String path, Block block) {
     RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, path));
     RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, path));
 
-    Registry.register(Registries.BLOCK, blockKey, block.VERTICAL_SLAB);
-    Registry.register(Registries.ITEM, itemKey, new BlockItem(block.VERTICAL_SLAB, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(itemKey)));
+    Registry.register(Registries.BLOCK, blockKey, block);
+    Registry.register(Registries.ITEM, itemKey, new BlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(itemKey)));
   }
 
   private void initOxidizableChains() {
@@ -148,6 +148,7 @@ public class VerticalSlabs implements ModInitializer {
       content.addBefore(Items.QUARTZ_SLAB, Quartz.VERTICAL_SLAB);
       content.addBefore(Items.RED_NETHER_BRICK_SLAB, RedNetherBricks.VERTICAL_SLAB);
       content.addBefore(Items.RED_SANDSTONE_SLAB, RedSandstone.VERTICAL_SLAB);
+      content.addBefore(Items.RESIN_BRICK_SLAB, ResinBricks.VERTICAL_SLAB);
       content.addBefore(Items.SANDSTONE_SLAB, Sandstone.VERTICAL_SLAB);
       content.addBefore(Items.SMOOTH_QUARTZ_SLAB, SmoothQuartz.VERTICAL_SLAB);
       content.addBefore(Items.SMOOTH_RED_SANDSTONE_SLAB, SmoothRedSandstone.VERTICAL_SLAB);
