@@ -50,6 +50,7 @@ public class VerticalSlabs implements ModInitializer {
     registerBlockItem(NetherBricks.ID, NetherBricks.VERTICAL_SLAB);
     registerBlockItem(OakPlanks.ID, OakPlanks.VERTICAL_SLAB);
     registerBlockItem(OxidizedCutCopper.ID, OxidizedCutCopper.VERTICAL_SLAB);
+    registerBlockItem(PaleOakPlanks.ID, PaleOakPlanks.VERTICAL_SLAB);
     registerBlockItem(PolishedAndesite.ID, PolishedAndesite.VERTICAL_SLAB);
     registerBlockItem(PolishedBlackstone.ID, PolishedBlackstone.VERTICAL_SLAB);
     registerBlockItem(PolishedBlackstoneBricks.ID, PolishedBlackstoneBricks.VERTICAL_SLAB);
@@ -135,6 +136,7 @@ public class VerticalSlabs implements ModInitializer {
       content.addBefore(Items.NETHER_BRICK_SLAB, NetherBricks.VERTICAL_SLAB);
       content.addBefore(Items.OAK_SLAB, OakPlanks.VERTICAL_SLAB);
       content.addBefore(Items.OXIDIZED_CUT_COPPER_SLAB, OxidizedCutCopper.VERTICAL_SLAB);
+      content.addBefore(Items.PALE_OAK_SLAB, PaleOakPlanks.VERTICAL_SLAB);
       content.addBefore(Items.POLISHED_ANDESITE_SLAB, PolishedAndesite.VERTICAL_SLAB);
       content.addBefore(Items.POLISHED_BLACKSTONE_SLAB, PolishedBlackstone.VERTICAL_SLAB);
       content.addBefore(Items.POLISHED_BLACKSTONE_BRICK_SLAB, PolishedBlackstoneBricks.VERTICAL_SLAB);

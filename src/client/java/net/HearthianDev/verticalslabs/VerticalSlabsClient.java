@@ -5,7 +5,7 @@ import net.HearthianDev.verticalslabs.block.blocks.*;
 import net.fabricmc.api.ClientModInitializer;
 
 public class VerticalSlabsClient implements ClientModInitializer {
-	public static final String MOD_ID = "verticalslabs";
+//	public static final String MOD_ID = "verticalslabs";
 
 	public static AbstractVerticalSlabBlock[] BLOCKS = {
 			new AbstractAcaciaPlanks(),
@@ -38,6 +38,7 @@ public class VerticalSlabsClient implements ClientModInitializer {
 			new AbstractNetherBricks(),
 			new AbstractOakPlanks(),
 			new AbstractOxidizedCutCopper(),
+			new AbstractPaleOakPlanks(),
 			new AbstractPolishedAndesite(),
 			new AbstractPolishedBlackstone(),
 			new AbstractPolishedBlackstoneBricks(),
