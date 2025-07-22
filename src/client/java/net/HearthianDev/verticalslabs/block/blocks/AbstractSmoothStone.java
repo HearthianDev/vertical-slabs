@@ -5,6 +5,7 @@ import net.HearthianDev.verticalslabs.block.VerticalSlabBlock;
 import net.HearthianDev.verticalslabs.block.blockInit.SmoothStone;
 import net.HearthianDev.verticalslabs.block.enums.VerticalSlabType;
 import net.minecraft.block.Block;
+import net.minecraft.client.render.model.json.*;
 import net.minecraft.client.data.*;
 import net.minecraft.item.Items;
 import net.minecraft.state.property.Properties;
@@ -23,54 +24,27 @@ public class AbstractSmoothStone extends AbstractVerticalSlabBlock {
     @Override
     public void generateBlockModel(BlockStateModelGenerator blockStateModelGenerator) {
         new Model(Optional.of(Identifier.of("verticalslabs:block/vertical_slab_column_sided")), Optional.empty()).upload(
-                VERTICAL_SLAB,
-                new TextureMap()
-                        .register(TextureKey.END, Identifier.ofVanilla("block/smooth_stone"))
-                        .register(TextureKey.SIDE, Identifier.ofVanilla("block/smooth_stone_slab_side")),
-                blockStateModelGenerator.modelCollector
+            VERTICAL_SLAB,
+            new TextureMap()
+                .register(TextureKey.END, Identifier.ofVanilla("block/smooth_stone"))
+                .register(TextureKey.SIDE, Identifier.ofVanilla("block/smooth_stone_slab_side")),
+            blockStateModelGenerator.modelCollector
         );
     }
 
     @Override
-    public MultipartBlockStateSupplier getBlockStates(MultipartBlockStateSupplier supplier) {
-        return supplier
-                .with(When.create().set(Properties.HORIZONTAL_FACING, Direction.NORTH).set(VerticalSlabBlock.TYPE, VerticalSlabType.HALF),
-                        BlockStateVariant.create()
-                                .put(VariantSettings.MODEL, Identifier.of("verticalslabs:block/" + this.ID))
-                                .put(VariantSettings.UVLOCK, false)
-                ).with(When.create().set(Properties.HORIZONTAL_FACING, Direction.EAST).set(VerticalSlabBlock.TYPE, VerticalSlabType.HALF),
-                        BlockStateVariant.create()
-                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
-                                .put(VariantSettings.MODEL, Identifier.of("verticalslabs:block/" + this.ID))
-                                .put(VariantSettings.UVLOCK, false)
-                ).with(When.create().set(Properties.HORIZONTAL_FACING, Direction.SOUTH).set(VerticalSlabBlock.TYPE, VerticalSlabType.HALF),
-                        BlockStateVariant.create()
-                                .put(VariantSettings.Y, VariantSettings.Rotation.R180)
-                                .put(VariantSettings.MODEL, Identifier.of("verticalslabs:block/" + this.ID))
-                                .put(VariantSettings.UVLOCK, false)
-                ).with(When.create().set(Properties.HORIZONTAL_FACING, Direction.WEST).set(VerticalSlabBlock.TYPE, VerticalSlabType.HALF),
-                        BlockStateVariant.create()
-                                .put(VariantSettings.Y, VariantSettings.Rotation.R270)
-                                .put(VariantSettings.MODEL, Identifier.of("verticalslabs:block/" + this.ID))
-                                .put(VariantSettings.UVLOCK, false)
-                ).with(When.create().set(Properties.HORIZONTAL_FACING, Direction.NORTH).set(VerticalSlabBlock.TYPE, VerticalSlabType.DOUBLE),
-                        BlockStateVariant.create()
-                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
-                                .put(VariantSettings.MODEL, Identifier.ofVanilla("block/" + this.PARENT_ID))
-                ).with(When.create().set(Properties.HORIZONTAL_FACING, Direction.EAST).set(VerticalSlabBlock.TYPE, VerticalSlabType.DOUBLE),
-                        BlockStateVariant.create()
-                                .put(VariantSettings.X, VariantSettings.Rotation.R90)
-                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
-                                .put(VariantSettings.MODEL, Identifier.ofVanilla("block/" + this.PARENT_ID))
-                ).with(When.create().set(Properties.HORIZONTAL_FACING, Direction.SOUTH).set(VerticalSlabBlock.TYPE, VerticalSlabType.DOUBLE),
-                        BlockStateVariant.create()
-                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
-                                .put(VariantSettings.MODEL, Identifier.ofVanilla("block/" + this.PARENT_ID))
-                ).with(When.create().set(Properties.HORIZONTAL_FACING, Direction.WEST).set(VerticalSlabBlock.TYPE, VerticalSlabType.DOUBLE),
-                        BlockStateVariant.create()
-                                .put(VariantSettings.X, VariantSettings.Rotation.R270)
-                                .put(VariantSettings.Y, VariantSettings.Rotation.R90)
-                                .put(VariantSettings.MODEL, Identifier.ofVanilla("block/" + this.PARENT_ID))
-                );
+    public VariantsBlockModelDefinitionCreator getBlockStates() {
+        return VariantsBlockModelDefinitionCreator.of(VERTICAL_SLAB, BlockStateModelGenerator.createWeightedVariant(Identifier.of("verticalslabs:block/" + this.ID)))
+            .coordinate(
+                BlockStateVariantMap.operations(Properties.HORIZONTAL_FACING, VerticalSlabBlock.TYPE)
+                    .register(Direction.NORTH, VerticalSlabType.HALF, BlockStateModelGenerator.NO_OP)
+                    .register(Direction.EAST, VerticalSlabType.HALF, BlockStateModelGenerator.ROTATE_Y_90)
+                    .register(Direction.SOUTH, VerticalSlabType.HALF, BlockStateModelGenerator.ROTATE_Y_180)
+                    .register(Direction.WEST, VerticalSlabType.HALF, BlockStateModelGenerator.ROTATE_Y_270)
+                    .register(Direction.NORTH, VerticalSlabType.DOUBLE, ModelVariantOperator.MODEL.withValue(Identifier.ofVanilla("block/" + this.PARENT_ID)).then(BlockStateModelGenerator.ROTATE_X_90))
+                    .register(Direction.EAST, VerticalSlabType.DOUBLE, ModelVariantOperator.MODEL.withValue(Identifier.ofVanilla("block/" + this.PARENT_ID)).then(BlockStateModelGenerator.ROTATE_X_90.then(BlockStateModelGenerator.ROTATE_Y_90)))
+                    .register(Direction.SOUTH, VerticalSlabType.DOUBLE, ModelVariantOperator.MODEL.withValue(Identifier.ofVanilla("block/" + this.PARENT_ID)).then(BlockStateModelGenerator.ROTATE_X_270))
+                    .register(Direction.WEST, VerticalSlabType.DOUBLE, ModelVariantOperator.MODEL.withValue(Identifier.ofVanilla("block/" + this.PARENT_ID)).then(BlockStateModelGenerator.ROTATE_X_270.then(BlockStateModelGenerator.ROTATE_Y_90)))
+            );
     }
 }

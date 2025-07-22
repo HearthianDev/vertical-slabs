@@ -1,55 +1,39 @@
 {
-  "multipart": [
-    {
-      "apply": {
-        "model": "verticalslabs:block/vertical_red_sandstone_slab",
-        "uvlock": true
-      },
-      "when": {
-        "type": "half",
-        "facing": "north"
-      }
+  "variants": {
+    "facing=east,type=double": {
+      "model": "minecraft:block/red_sandstone",
+      "uvlock": true
     },
-    {
-      "apply": {
-        "model": "verticalslabs:block/vertical_red_sandstone_slab",
-        "uvlock": true,
-        "y": 90
-      },
-      "when": {
-        "type": "half",
-        "facing": "east"
-      }
+    "facing=east,type=half": {
+      "model": "verticalslabs:block/vertical_red_sandstone_slab",
+      "uvlock": true,
+      "y": 90
     },
-    {
-      "apply": {
-        "model": "verticalslabs:block/vertical_red_sandstone_slab",
-        "uvlock": true,
-        "y": 180
-      },
-      "when": {
-        "type": "half",
-        "facing": "south"
-      }
+    "facing=north,type=double": {
+      "model": "minecraft:block/red_sandstone",
+      "uvlock": true
     },
-    {
-      "apply": {
-        "model": "verticalslabs:block/vertical_red_sandstone_slab",
-        "uvlock": true,
-        "y": 270
-      },
-      "when": {
-        "type": "half",
-        "facing": "west"
-      }
+    "facing=north,type=half": {
+      "model": "verticalslabs:block/vertical_red_sandstone_slab",
+      "uvlock": true
     },
-    {
-      "apply": {
-        "model": "minecraft:block/red_sandstone"
-      },
-      "when": {
-        "type": "double"
-      }
+    "facing=south,type=double": {
+      "model": "minecraft:block/red_sandstone",
+      "uvlock": true
+    },
+    "facing=south,type=half": {
+      "model": "verticalslabs:block/vertical_red_sandstone_slab",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,type=double": {
+      "model": "minecraft:block/red_sandstone",
+      "uvlock": true
+    },
+    "facing=west,type=half": {
+      "model": "verticalslabs:block/vertical_red_sandstone_slab",
+      "uvlock": true,
+      "y": 270
     }
-  ]
+  }
 }

@@ -5,13 +5,13 @@
 	"name": "Vertical slabs",
 	"description": "Vertical slabs for each vanilla slab",
 	"authors": [
-		"John-Development"
+		"HearthianDev"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/HearthianDev",
+		"sources": "https://github.com/HearthianDev/vertical-slabs"
 	},
-	"license": "CC0-1.0",
+	"license": "GPL-3.0",
 	"icon": "assets/verticalslabs/icon.png",
 	"environment": "*",
 	"entrypoints": {
