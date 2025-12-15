@@ -14,9 +14,9 @@ import static net.HearthianDev.verticalslabs.VerticalSlabs.MOD_ID;
 public class AcaciaPlanks {
     public static final String ID = "vertical_acacia_slab";
     public static final Block VERTICAL_SLAB = new VerticalSlabBlock(
-            AbstractBlock.Settings.copy(Blocks.ACACIA_SLAB)
-                    .sounds(BlockSoundGroup.WOOD)
-                    .hardness(2f)
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, ID)))
+        AbstractBlock.Settings.copy(Blocks.ACACIA_SLAB)
+            .sounds(BlockSoundGroup.WOOD)
+            .hardness(2f)
+            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, ID)))
     );
 }

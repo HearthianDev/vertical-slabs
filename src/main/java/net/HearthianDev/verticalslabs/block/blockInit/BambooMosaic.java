@@ -14,9 +14,9 @@ import static net.HearthianDev.verticalslabs.VerticalSlabs.MOD_ID;
 public class BambooMosaic {
     public static final String ID = "vertical_bamboo_mosaic_slab";
     public static final Block VERTICAL_SLAB = new VerticalSlabBlock(
-            AbstractBlock.Settings.copy(Blocks.BAMBOO_MOSAIC_SLAB)
-                    .sounds(BlockSoundGroup.BAMBOO_WOOD)
-                    .hardness(2f)
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "vertical_bamboo_mosaic_slab")))
+        AbstractBlock.Settings.copy(Blocks.BAMBOO_MOSAIC_SLAB)
+            .sounds(BlockSoundGroup.BAMBOO_WOOD)
+            .hardness(2f)
+            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "vertical_bamboo_mosaic_slab")))
     );
 }

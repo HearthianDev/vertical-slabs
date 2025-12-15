@@ -14,10 +14,10 @@ import static net.HearthianDev.verticalslabs.VerticalSlabs.MOD_ID;
 public class Cobblestone {
     public static final String ID = "vertical_cobblestone_slab";
     public static final Block VERTICAL_SLAB = new VerticalSlabBlock(
-            AbstractBlock.Settings.copy(Blocks.COBBLESTONE_SLAB)
-                    .sounds(BlockSoundGroup.STONE)
-                    .hardness(2f)
-                    .requiresTool()
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "vertical_cobblestone_slab")))
+        AbstractBlock.Settings.copy(Blocks.COBBLESTONE_SLAB)
+            .sounds(BlockSoundGroup.STONE)
+            .hardness(2f)
+            .requiresTool()
+            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "vertical_cobblestone_slab")))
     );
 }

@@ -14,10 +14,10 @@ import static net.HearthianDev.verticalslabs.VerticalSlabs.MOD_ID;
 public class Andesite {
     public static final String ID = "vertical_andesite_slab";
     public static final Block VERTICAL_SLAB = new VerticalSlabBlock(
-            AbstractBlock.Settings.copy(Blocks.ANDESITE_SLAB)
-                    .sounds(BlockSoundGroup.STONE)
-                    .hardness(2f)
-                    .requiresTool()
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "vertical_andesite_slab")))
+        AbstractBlock.Settings.copy(Blocks.ANDESITE_SLAB)
+            .sounds(BlockSoundGroup.STONE)
+            .hardness(2f)
+            .requiresTool()
+            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "vertical_andesite_slab")))
     );
 }

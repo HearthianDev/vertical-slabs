@@ -35,7 +35,7 @@ public class AbstractSmoothStone extends AbstractVerticalSlabBlock {
     @Override
     public VariantsBlockModelDefinitionCreator getBlockStates() {
         return VariantsBlockModelDefinitionCreator.of(VERTICAL_SLAB, BlockStateModelGenerator.createWeightedVariant(Identifier.of("verticalslabs:block/" + this.ID)))
-            .coordinate(
+            .apply(
                 BlockStateVariantMap.operations(Properties.HORIZONTAL_FACING, VerticalSlabBlock.TYPE)
                     .register(Direction.NORTH, VerticalSlabType.HALF, BlockStateModelGenerator.NO_OP)
                     .register(Direction.EAST, VerticalSlabType.HALF, BlockStateModelGenerator.ROTATE_Y_90)

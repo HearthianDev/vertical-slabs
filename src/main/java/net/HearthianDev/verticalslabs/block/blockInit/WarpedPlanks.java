@@ -14,9 +14,9 @@ import static net.HearthianDev.verticalslabs.VerticalSlabs.MOD_ID;
 public class WarpedPlanks {
     public static final String ID = "vertical_warped_slab";
     public static final Block VERTICAL_SLAB = new VerticalSlabBlock(
-            AbstractBlock.Settings.copy(Blocks.WARPED_SLAB)
-                    .sounds(BlockSoundGroup.WOOD)
-                    .hardness(2f)
-                    .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "vertical_warped_slab")))
+        AbstractBlock.Settings.copy(Blocks.WARPED_SLAB)
+            .sounds(BlockSoundGroup.WOOD)
+            .hardness(2f)
+            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "vertical_warped_slab")))
     );
 }

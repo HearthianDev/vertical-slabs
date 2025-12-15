@@ -32,7 +32,7 @@ public class AbstractPrismarineBricks extends AbstractVerticalSlabBlock {
     public VariantsBlockModelDefinitionCreator getBlockStates() {
         return VariantsBlockModelDefinitionCreator.of(VERTICAL_SLAB, BlockStateModelGenerator.createWeightedVariant(Identifier.of("verticalslabs:block/" + this.ID)))
             .apply(BlockStateModelGenerator.UV_LOCK)
-            .coordinate(
+            .apply(
                 BlockStateVariantMap.operations(Properties.HORIZONTAL_FACING, VerticalSlabBlock.TYPE)
                     .register(Direction.NORTH, VerticalSlabType.HALF, BlockStateModelGenerator.NO_OP)
                     .register(Direction.EAST, VerticalSlabType.HALF, BlockStateModelGenerator.ROTATE_Y_90)
