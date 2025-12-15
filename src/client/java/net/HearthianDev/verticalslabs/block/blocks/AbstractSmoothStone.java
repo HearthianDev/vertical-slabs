@@ -4,14 +4,19 @@ import net.HearthianDev.verticalslabs.block.AbstractVerticalSlabBlock;
 import net.HearthianDev.verticalslabs.block.VerticalSlabBlock;
 import net.HearthianDev.verticalslabs.block.blockInit.SmoothStone;
 import net.HearthianDev.verticalslabs.block.enums.VerticalSlabType;
-import net.minecraft.block.Block;
-import net.minecraft.client.render.model.json.*;
+import net.minecraft.client.renderer.block.model.VariantMutator;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.client.data.*;
-import net.minecraft.item.Items;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Direction;
-
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
+import net.minecraft.client.data.models.model.ModelTemplate;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
 import java.util.Optional;
 
 public class AbstractSmoothStone extends AbstractVerticalSlabBlock {
@@ -22,29 +27,29 @@ public class AbstractSmoothStone extends AbstractVerticalSlabBlock {
     }
 
     @Override
-    public void generateBlockModel(BlockStateModelGenerator blockStateModelGenerator) {
-        new Model(Optional.of(Identifier.of("verticalslabs:block/vertical_slab_column_sided")), Optional.empty()).upload(
+    public void generateBlockModel(BlockModelGenerators blockStateModelGenerator) {
+        new ModelTemplate(Optional.of(Identifier.parse("verticalslabs:block/vertical_slab_column_sided")), Optional.empty()).create(
             VERTICAL_SLAB,
-            new TextureMap()
-                .register(TextureKey.END, Identifier.ofVanilla("block/smooth_stone"))
-                .register(TextureKey.SIDE, Identifier.ofVanilla("block/smooth_stone_slab_side")),
-            blockStateModelGenerator.modelCollector
+            new TextureMapping()
+                .putForced(TextureSlot.END, Identifier.withDefaultNamespace("block/smooth_stone"))
+                .putForced(TextureSlot.SIDE, Identifier.withDefaultNamespace("block/smooth_stone_slab_side")),
+            blockStateModelGenerator.modelOutput
         );
     }
 
     @Override
-    public VariantsBlockModelDefinitionCreator getBlockStates() {
-        return VariantsBlockModelDefinitionCreator.of(VERTICAL_SLAB, BlockStateModelGenerator.createWeightedVariant(Identifier.of("verticalslabs:block/" + this.ID)))
-            .apply(
-                BlockStateVariantMap.operations(Properties.HORIZONTAL_FACING, VerticalSlabBlock.TYPE)
-                    .register(Direction.NORTH, VerticalSlabType.HALF, BlockStateModelGenerator.NO_OP)
-                    .register(Direction.EAST, VerticalSlabType.HALF, BlockStateModelGenerator.ROTATE_Y_90)
-                    .register(Direction.SOUTH, VerticalSlabType.HALF, BlockStateModelGenerator.ROTATE_Y_180)
-                    .register(Direction.WEST, VerticalSlabType.HALF, BlockStateModelGenerator.ROTATE_Y_270)
-                    .register(Direction.NORTH, VerticalSlabType.DOUBLE, ModelVariantOperator.MODEL.withValue(Identifier.ofVanilla("block/" + this.PARENT_ID)).then(BlockStateModelGenerator.ROTATE_X_90))
-                    .register(Direction.EAST, VerticalSlabType.DOUBLE, ModelVariantOperator.MODEL.withValue(Identifier.ofVanilla("block/" + this.PARENT_ID)).then(BlockStateModelGenerator.ROTATE_X_90.then(BlockStateModelGenerator.ROTATE_Y_90)))
-                    .register(Direction.SOUTH, VerticalSlabType.DOUBLE, ModelVariantOperator.MODEL.withValue(Identifier.ofVanilla("block/" + this.PARENT_ID)).then(BlockStateModelGenerator.ROTATE_X_270))
-                    .register(Direction.WEST, VerticalSlabType.DOUBLE, ModelVariantOperator.MODEL.withValue(Identifier.ofVanilla("block/" + this.PARENT_ID)).then(BlockStateModelGenerator.ROTATE_X_270.then(BlockStateModelGenerator.ROTATE_Y_90)))
+    public MultiVariantGenerator getBlockStates() {
+        return MultiVariantGenerator.dispatch(VERTICAL_SLAB, BlockModelGenerators.plainVariant(Identifier.parse("verticalslabs:block/" + this.ID)))
+            .with(
+                PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING, VerticalSlabBlock.TYPE)
+                    .select(Direction.NORTH, VerticalSlabType.HALF, BlockModelGenerators.NOP)
+                    .select(Direction.EAST, VerticalSlabType.HALF, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.SOUTH, VerticalSlabType.HALF, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, VerticalSlabType.HALF, BlockModelGenerators.Y_ROT_270)
+                    .select(Direction.NORTH, VerticalSlabType.DOUBLE, VariantMutator.MODEL.withValue(Identifier.withDefaultNamespace("block/" + this.PARENT_ID)).then(BlockModelGenerators.X_ROT_90))
+                    .select(Direction.EAST, VerticalSlabType.DOUBLE, VariantMutator.MODEL.withValue(Identifier.withDefaultNamespace("block/" + this.PARENT_ID)).then(BlockModelGenerators.X_ROT_90.then(BlockModelGenerators.Y_ROT_90)))
+                    .select(Direction.SOUTH, VerticalSlabType.DOUBLE, VariantMutator.MODEL.withValue(Identifier.withDefaultNamespace("block/" + this.PARENT_ID)).then(BlockModelGenerators.X_ROT_270))
+                    .select(Direction.WEST, VerticalSlabType.DOUBLE, VariantMutator.MODEL.withValue(Identifier.withDefaultNamespace("block/" + this.PARENT_ID)).then(BlockModelGenerators.X_ROT_270.then(BlockModelGenerators.Y_ROT_90)))
             );
     }
 }

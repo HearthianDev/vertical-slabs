@@ -2,14 +2,13 @@ package net.HearthianDev.verticalslabs.block.blocks;
 
 import net.HearthianDev.verticalslabs.block.AbstractVerticalSlabBlock;
 import net.HearthianDev.verticalslabs.block.blockInit.Quartz;
-import net.minecraft.block.Block;
-import net.minecraft.client.data.BlockStateModelGenerator;
-import net.minecraft.client.data.Model;
-import net.minecraft.client.data.TextureKey;
-import net.minecraft.client.data.TextureMap;
-import net.minecraft.item.Items;
-import net.minecraft.util.Identifier;
-
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplate;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import java.util.Optional;
 
 
@@ -21,11 +20,11 @@ public class AbstractQuartz extends AbstractVerticalSlabBlock {
     }
 
     @Override
-    public void generateBlockModel(BlockStateModelGenerator blockStateModelGenerator) {
-        new Model(Optional.of(Identifier.of("verticalslabs:block/vertical_slab_all")), Optional.empty()).upload(
+    public void generateBlockModel(BlockModelGenerators blockStateModelGenerator) {
+        new ModelTemplate(Optional.of(Identifier.parse("verticalslabs:block/vertical_slab_all")), Optional.empty()).create(
                 VERTICAL_SLAB,
-                new TextureMap().register(TextureKey.ALL, Identifier.ofVanilla("block/quartz_block_side")),
-                blockStateModelGenerator.modelCollector
+                new TextureMapping().putForced(TextureSlot.ALL, Identifier.withDefaultNamespace("block/quartz_block_side")),
+                blockStateModelGenerator.modelOutput
         );
     }
 }

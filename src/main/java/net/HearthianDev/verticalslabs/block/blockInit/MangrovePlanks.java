@@ -1,22 +1,22 @@
 package net.HearthianDev.verticalslabs.block.blockInit;
 
 import net.HearthianDev.verticalslabs.block.VerticalSlabBlock;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import static net.HearthianDev.verticalslabs.VerticalSlabs.MOD_ID;
 
 public class MangrovePlanks {
     public static final String ID = "vertical_mangrove_slab";
     public static final Block VERTICAL_SLAB = new VerticalSlabBlock(
-        AbstractBlock.Settings.copy(Blocks.MANGROVE_SLAB)
-            .sounds(BlockSoundGroup.WOOD)
-            .hardness(2f)
-            .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, "vertical_mangrove_slab")))
+        BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_SLAB)
+            .sound(SoundType.WOOD)
+            .destroyTime(2f)
+            .setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, "vertical_mangrove_slab")))
     );
 }

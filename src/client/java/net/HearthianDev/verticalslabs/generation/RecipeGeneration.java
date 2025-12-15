@@ -3,37 +3,40 @@ package net.HearthianDev.verticalslabs.generation;
 import net.HearthianDev.verticalslabs.block.AbstractVerticalSlabBlock;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.recipe.*;
-import net.minecraft.recipe.book.RecipeCategory;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.recipes.RecipeBuilder;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.RecipeProvider;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
 import static net.HearthianDev.verticalslabs.VerticalSlabsClient.BLOCKS;
 
 public class RecipeGeneration extends FabricRecipeProvider {
-    public RecipeGeneration(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public RecipeGeneration(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
     @Override
-    protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup wrapperLookup, RecipeExporter recipeExporter) {
-        return new RecipeGenerator(wrapperLookup, recipeExporter) {
+    protected @NotNull RecipeProvider createRecipeProvider(HolderLookup.@NotNull Provider wrapperLookup, @NotNull RecipeOutput recipeExporter) {
+        return new RecipeProvider(wrapperLookup, recipeExporter) {
             @Override
-            public void generate() {
+            public void buildRecipes() {
                 for (AbstractVerticalSlabBlock block : BLOCKS) {
-                    createShaped(RecipeCategory.BUILDING_BLOCKS, block.VERTICAL_SLAB.asItem(), 6)
+                    shaped(RecipeCategory.BUILDING_BLOCKS, block.VERTICAL_SLAB.asItem(), 6)
                             .pattern(" # ")
                             .pattern(" # ")
                             .pattern(" # ")
-                            .input('#', block.PARENT)
-                            .group(CraftingRecipeJsonBuilder.getItemId(block.VERTICAL_SLAB).toString())
-                            .criterion(hasItem(block.PARENT), conditionsFromItem(block.PARENT))
-                            .offerTo(exporter);
+                            .define('#', block.PARENT)
+                            .group(RecipeBuilder.getDefaultRecipeId(block.VERTICAL_SLAB).toString())
+                            .unlockedBy(getHasName(block.PARENT), has(block.PARENT))
+                            .save(output);
 
                     if (block.isCuttable) {
                         // Stonecutter recipes
-                        offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, block.VERTICAL_SLAB.asItem(), block.PARENT.asItem(), 2);
+                        stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, block.VERTICAL_SLAB.asItem(), block.PARENT.asItem(), 2);
                     }
                 }
             }
@@ -41,7 +44,7 @@ public class RecipeGeneration extends FabricRecipeProvider {
     }
 
     @Override
-    public String getName() {
+    public @NotNull String getName() {
         return "";
     }
 }

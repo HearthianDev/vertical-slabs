@@ -1,14 +1,19 @@
 package net.HearthianDev.verticalslabs.block;
 
 import net.HearthianDev.verticalslabs.block.enums.VerticalSlabType;
-import net.minecraft.block.Block;
 import net.minecraft.client.data.*;
-import net.minecraft.client.render.model.json.*;
-import net.minecraft.item.Item;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Direction;
-
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
+import net.minecraft.client.data.models.model.ModelTemplate;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.renderer.block.model.VariantMutator;
+import net.minecraft.core.Direction;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import java.util.Optional;
 
 public abstract class AbstractVerticalSlabBlock {
@@ -17,7 +22,7 @@ public abstract class AbstractVerticalSlabBlock {
     public String PARENT_ID;
     public Item PARENT;
     public Item SLAB;
-    public TextureMap textures;
+    public TextureMapping textures;
     public boolean isCuttable;
 
     public AbstractVerticalSlabBlock(String id, Block verticalSlab, Item parent, Item slab) {
@@ -41,27 +46,27 @@ public abstract class AbstractVerticalSlabBlock {
         this.isCuttable = isCuttable;
     }
 
-    public void generateBlockModel(BlockStateModelGenerator blockStateModelGenerator) {
-        new Model(Optional.of(Identifier.of("verticalslabs:block/vertical_slab_all")), Optional.empty()).upload(
+    public void generateBlockModel(BlockModelGenerators blockStateModelGenerator) {
+        new ModelTemplate(Optional.of(Identifier.parse("verticalslabs:block/vertical_slab_all")), Optional.empty()).create(
             this.VERTICAL_SLAB,
-            textures = new TextureMap().register(TextureKey.ALL, Identifier.ofVanilla("block/" + this.PARENT_ID)),
-            blockStateModelGenerator.modelCollector
+            textures = new TextureMapping().putForced(TextureSlot.ALL, Identifier.withDefaultNamespace("block/" + this.PARENT_ID)),
+            blockStateModelGenerator.modelOutput
         );
     }
 
-    public VariantsBlockModelDefinitionCreator getBlockStates() {
-        return VariantsBlockModelDefinitionCreator.of(this.VERTICAL_SLAB, BlockStateModelGenerator.createWeightedVariant(Identifier.of("verticalslabs:block/" + this.ID)))
-            .apply(BlockStateModelGenerator.UV_LOCK)
-            .apply(
-                BlockStateVariantMap.operations(Properties.HORIZONTAL_FACING, VerticalSlabBlock.TYPE)
-                    .register(Direction.NORTH, VerticalSlabType.HALF, BlockStateModelGenerator.NO_OP)
-                    .register(Direction.EAST, VerticalSlabType.HALF, BlockStateModelGenerator.ROTATE_Y_90)
-                    .register(Direction.SOUTH, VerticalSlabType.HALF, BlockStateModelGenerator.ROTATE_Y_180)
-                    .register(Direction.WEST, VerticalSlabType.HALF, BlockStateModelGenerator.ROTATE_Y_270)
-                    .register(Direction.NORTH, VerticalSlabType.DOUBLE, ModelVariantOperator.MODEL.withValue(Identifier.ofVanilla("block/" + this.PARENT_ID)))
-                    .register(Direction.EAST, VerticalSlabType.DOUBLE, ModelVariantOperator.MODEL.withValue(Identifier.ofVanilla("block/" + this.PARENT_ID)))
-                    .register(Direction.SOUTH, VerticalSlabType.DOUBLE, ModelVariantOperator.MODEL.withValue(Identifier.ofVanilla("block/" + this.PARENT_ID)))
-                    .register(Direction.WEST, VerticalSlabType.DOUBLE, ModelVariantOperator.MODEL.withValue(Identifier.ofVanilla("block/" + this.PARENT_ID)))
+    public MultiVariantGenerator getBlockStates() {
+        return MultiVariantGenerator.dispatch(this.VERTICAL_SLAB, BlockModelGenerators.plainVariant(Identifier.parse("verticalslabs:block/" + this.ID)))
+            .with(BlockModelGenerators.UV_LOCK)
+            .with(
+                PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING, VerticalSlabBlock.TYPE)
+                    .select(Direction.NORTH, VerticalSlabType.HALF, BlockModelGenerators.NOP)
+                    .select(Direction.EAST, VerticalSlabType.HALF, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.SOUTH, VerticalSlabType.HALF, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, VerticalSlabType.HALF, BlockModelGenerators.Y_ROT_270)
+                    .select(Direction.NORTH, VerticalSlabType.DOUBLE, VariantMutator.MODEL.withValue(Identifier.withDefaultNamespace("block/" + this.PARENT_ID)))
+                    .select(Direction.EAST, VerticalSlabType.DOUBLE, VariantMutator.MODEL.withValue(Identifier.withDefaultNamespace("block/" + this.PARENT_ID)))
+                    .select(Direction.SOUTH, VerticalSlabType.DOUBLE, VariantMutator.MODEL.withValue(Identifier.withDefaultNamespace("block/" + this.PARENT_ID)))
+                    .select(Direction.WEST, VerticalSlabType.DOUBLE, VariantMutator.MODEL.withValue(Identifier.withDefaultNamespace("block/" + this.PARENT_ID)))
             );
     }
 }

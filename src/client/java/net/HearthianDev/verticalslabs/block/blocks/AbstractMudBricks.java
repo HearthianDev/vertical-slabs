@@ -2,8 +2,8 @@ package net.HearthianDev.verticalslabs.block.blocks;
 
 import net.HearthianDev.verticalslabs.block.AbstractVerticalSlabBlock;
 import net.HearthianDev.verticalslabs.block.blockInit.MudBricks;
-import net.minecraft.block.Block;
-import net.minecraft.item.Items;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 
 public class AbstractMudBricks extends AbstractVerticalSlabBlock {
     public static final Block VERTICAL_SLAB = MudBricks.VERTICAL_SLAB;

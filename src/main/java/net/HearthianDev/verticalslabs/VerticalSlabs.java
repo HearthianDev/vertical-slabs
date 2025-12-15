@@ -4,16 +4,17 @@ import net.HearthianDev.verticalslabs.block.blockInit.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.NotNull;
 
 public class VerticalSlabs implements ModInitializer {
     public static final String MOD_ID = "verticalslabs";
@@ -87,10 +88,10 @@ public class VerticalSlabs implements ModInitializer {
     }
 
     public static void registerBlockItem(String path, Block block) {
-        RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, path));
-        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(MOD_ID, path));
-        Registry.register(Registries.BLOCK, blockKey, block);
-        Registry.register(Registries.ITEM, itemKey, new BlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey().registryKey(itemKey)));
+        ResourceKey<@NotNull Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, path));
+        ResourceKey<@NotNull Block> blockKey = ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, path));
+        Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
+        Registry.register(BuiltInRegistries.ITEM, itemKey, new BlockItem(block, new Item.Properties().useBlockDescriptionPrefix().setId(itemKey)));
     }
 
     private void initOxidizableChains() {
@@ -104,7 +105,7 @@ public class VerticalSlabs implements ModInitializer {
     }
 
     private void initCreativePlacement() {
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> {
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(content -> {
             content.addBefore(Items.ACACIA_SLAB, AcaciaPlanks.VERTICAL_SLAB);
             content.addBefore(Items.ANDESITE_SLAB, Andesite.VERTICAL_SLAB);
             content.addBefore(Items.BAMBOO_MOSAIC_SLAB, BambooMosaic.VERTICAL_SLAB);
@@ -118,7 +119,7 @@ public class VerticalSlabs implements ModInitializer {
             content.addBefore(Items.CRIMSON_SLAB, CrimsomPlanks.VERTICAL_SLAB);
             content.addBefore(Items.CUT_COPPER_SLAB, CutCopper.VERTICAL_SLAB);
             content.addBefore(Items.CUT_RED_SANDSTONE_SLAB, CutRedSandstone.VERTICAL_SLAB);
-            content.addBefore(Items.CUT_SANDSTONE_SLAB, CutSandstone.VERTICAL_SLAB);
+            content.addBefore(Items.CUT_STANDSTONE_SLAB, CutSandstone.VERTICAL_SLAB);
             content.addBefore(Items.DARK_OAK_SLAB, DarkOakPlanks.VERTICAL_SLAB);
             content.addBefore(Items.DARK_PRISMARINE_SLAB, DarkPrismarine.VERTICAL_SLAB);
             content.addBefore(Items.DEEPSLATE_BRICK_SLAB, DeepslateBricks.VERTICAL_SLAB);

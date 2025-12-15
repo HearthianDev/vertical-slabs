@@ -1,8 +1,9 @@
 package net.HearthianDev.verticalslabs.block.enums;
 
-import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.StringRepresentable;
+import org.jetbrains.annotations.NotNull;
 
-public enum VerticalSlabType implements StringIdentifiable {
+public enum VerticalSlabType implements StringRepresentable {
     HALF("half"),
     DOUBLE("double");
 
@@ -16,7 +17,7 @@ public enum VerticalSlabType implements StringIdentifiable {
         return this.name;
     }
 
-    public String asString() {
+    public @NotNull String getSerializedName() {
         return this.name;
     }
 }
