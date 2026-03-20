@@ -3,8 +3,8 @@ package net.HearthianDev.verticalslabs.generation;
 import net.HearthianDev.verticalslabs.block.VerticalSlabBlock;
 import net.HearthianDev.verticalslabs.block.AbstractVerticalSlabBlock;
 import net.HearthianDev.verticalslabs.block.enums.VerticalSlabType;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.minecraft.advancements.criterion.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.level.ItemLike;
@@ -18,8 +18,8 @@ import java.util.concurrent.CompletableFuture;
 
 import static net.HearthianDev.verticalslabs.VerticalSlabsClient.BLOCKS;
 
-public class LootTableGeneration extends FabricBlockLootTableProvider {
-    public LootTableGeneration(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
+public class LootTableGeneration extends FabricBlockLootSubProvider {
+    public LootTableGeneration(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataOutput, registryLookup);
     }
 

@@ -6,6 +6,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -23,8 +24,8 @@ public class AbstractCutSandstone extends AbstractVerticalSlabBlock {
         new ModelTemplate(Optional.of(Identifier.parse("verticalslabs:block/vertical_slab_column")), Optional.empty()).create(
                 VERTICAL_SLAB,
                 new TextureMapping()
-                        .putForced(TextureSlot.END, Identifier.withDefaultNamespace("block/sandstone_top"))
-                        .putForced(TextureSlot.SIDE, Identifier.withDefaultNamespace("block/" + this.PARENT_ID)),
+                        .putForced(TextureSlot.END, new Material(Identifier.withDefaultNamespace("block/sandstone_top")))
+                        .putForced(TextureSlot.SIDE, new Material(Identifier.withDefaultNamespace("block/" + this.PARENT_ID))),
                 blockStateModelGenerator.modelOutput
         );
     }

@@ -8,7 +8,8 @@ import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
-import net.minecraft.client.renderer.block.model.VariantMutator;
+import net.minecraft.client.renderer.block.dispatch.VariantMutator;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
@@ -49,7 +50,7 @@ public abstract class AbstractVerticalSlabBlock {
     public void generateBlockModel(BlockModelGenerators blockStateModelGenerator) {
         new ModelTemplate(Optional.of(Identifier.parse("verticalslabs:block/vertical_slab_all")), Optional.empty()).create(
             this.VERTICAL_SLAB,
-            textures = new TextureMapping().putForced(TextureSlot.ALL, Identifier.withDefaultNamespace("block/" + this.PARENT_ID)),
+            textures = new TextureMapping().putForced(TextureSlot.ALL, new Material(Identifier.withDefaultNamespace("block/" + this.PARENT_ID))),
             blockStateModelGenerator.modelOutput
         );
     }

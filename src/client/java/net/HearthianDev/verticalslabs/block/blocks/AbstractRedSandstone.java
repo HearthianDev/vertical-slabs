@@ -6,6 +6,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -23,9 +24,9 @@ public class AbstractRedSandstone extends AbstractVerticalSlabBlock {
         new ModelTemplate(Optional.of(Identifier.parse("verticalslabs:block/vertical_slab_bottom_top")), Optional.empty()).create(
                 VERTICAL_SLAB,
                 new TextureMapping()
-                        .putForced(TextureSlot.BOTTOM, Identifier.withDefaultNamespace("block/red_sandstone_bottom"))
-                        .putForced(TextureSlot.TOP, Identifier.withDefaultNamespace("block/red_sandstone_top"))
-                        .putForced(TextureSlot.SIDE, Identifier.withDefaultNamespace("block/" + this.PARENT_ID)),
+                        .putForced(TextureSlot.BOTTOM, new Material(Identifier.withDefaultNamespace("block/red_sandstone_bottom")))
+                        .putForced(TextureSlot.TOP, new Material(Identifier.withDefaultNamespace("block/red_sandstone_top")))
+                        .putForced(TextureSlot.SIDE, new Material(Identifier.withDefaultNamespace("block/" + this.PARENT_ID))),
                 blockStateModelGenerator.modelOutput
         );
     }

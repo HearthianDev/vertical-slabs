@@ -4,7 +4,8 @@ import net.HearthianDev.verticalslabs.block.AbstractVerticalSlabBlock;
 import net.HearthianDev.verticalslabs.block.VerticalSlabBlock;
 import net.HearthianDev.verticalslabs.block.blockInit.SmoothStone;
 import net.HearthianDev.verticalslabs.block.enums.VerticalSlabType;
-import net.minecraft.client.renderer.block.model.VariantMutator;
+import net.minecraft.client.renderer.block.dispatch.VariantMutator;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Items;
@@ -31,8 +32,8 @@ public class AbstractSmoothStone extends AbstractVerticalSlabBlock {
         new ModelTemplate(Optional.of(Identifier.parse("verticalslabs:block/vertical_slab_column_sided")), Optional.empty()).create(
             VERTICAL_SLAB,
             new TextureMapping()
-                .putForced(TextureSlot.END, Identifier.withDefaultNamespace("block/smooth_stone"))
-                .putForced(TextureSlot.SIDE, Identifier.withDefaultNamespace("block/smooth_stone_slab_side")),
+                .putForced(TextureSlot.END, new Material(Identifier.withDefaultNamespace("block/smooth_stone")))
+                .putForced(TextureSlot.SIDE, new Material(Identifier.withDefaultNamespace("block/smooth_stone_slab_side"))),
             blockStateModelGenerator.modelOutput
         );
     }
