@@ -9,6 +9,6 @@ public class AbstractWaxedOxidizedCutCopper extends AbstractVerticalSlabBlock {
     public static final Block VERTICAL_SLAB = WaxedOxidizedCutCopper.VERTICAL_SLAB;
 
     public AbstractWaxedOxidizedCutCopper() {
-        super(WaxedOxidizedCutCopper.ID, VERTICAL_SLAB, "oxidized_cut_copper", Items.WAXED_OXIDIZED_CUT_COPPER, Items.WAXED_OXIDIZED_CUT_COPPER_SLAB);
+        super(WaxedOxidizedCutCopper.ID, VERTICAL_SLAB, "oxidized_cut_copper", Items.CUT_COPPER.waxed().oxidized(), Items.CUT_COPPER_SLAB.waxed().oxidized());
     }
 }

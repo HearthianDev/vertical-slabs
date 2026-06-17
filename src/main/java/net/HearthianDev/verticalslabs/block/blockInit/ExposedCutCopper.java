@@ -16,7 +16,7 @@ public class ExposedCutCopper {
     public static final String ID = "vertical_exposed_cut_copper_slab";
     public static final Block VERTICAL_SLAB = new CopperVerticalSlabBlock(
         WeatheringCopper.WeatherState.UNAFFECTED,
-        BlockBehaviour.Properties.ofFullCopy(Blocks.EXPOSED_CUT_COPPER_SLAB)
+        BlockBehaviour.Properties.ofFullCopy(Blocks.CUT_COPPER_SLAB.weathering().exposed())
             .sound(SoundType.METAL)
             .destroyTime(2f)
             .requiresCorrectToolForDrops()

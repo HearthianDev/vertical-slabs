@@ -1,4 +1,10 @@
 {
+	"block.verticalslabs.vertical_cinnabar_slab": "Vertical cinnabar slab",
+	"block.verticalslabs.vertical_cinnabar_brick_slab": "Vertical cinnabar brick slab",
+	"block.verticalslabs.vertical_polished_cinnabar_slab": "Vertical polished cinnabar slab",
+	"block.verticalslabs.vertical_sulfur_slab": "Vertical sulfur slab",
+	"block.verticalslabs.vertical_sulfur_brick_slab": "Vertical sulfur brick slab",
+	"block.verticalslabs.vertical_polished_sulfur_slab": "Vertical polished sulfur slab",
 	"block.verticalslabs.vertical_oak_slab":"Vertical Oak Slab",
 	"block.verticalslabs.vertical_spruce_slab":"Vertical Spruce Slab",
 	"block.verticalslabs.vertical_birch_slab":"Vertical Birch Slab",

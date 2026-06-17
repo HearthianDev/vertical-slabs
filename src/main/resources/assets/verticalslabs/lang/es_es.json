@@ -1,4 +1,10 @@
 {
+	"block.verticalslabs.vertical_cinnabar_slab": "Losa de cinabrio vertical",
+	"block.verticalslabs.vertical_cinnabar_brick_slab": "Losa de ladrillos de cinabrio vertical",
+	"block.verticalslabs.vertical_polished_cinnabar_slab": "Losa de cinabrio pulido vertical",
+	"block.verticalslabs.vertical_sulfur_slab": "Losa de azufre vertical",
+	"block.verticalslabs.vertical_sulfur_brick_slab": "Losa de ladrillos de azufre vertical",
+	"block.verticalslabs.vertical_polished_sulfur_slab": "Losa de azufre pulido vertical",
 	"block.verticalslabs.vertical_oak_slab":"Losa de roble vertical",
 	"block.verticalslabs.vertical_spruce_slab":"Losa de aberto vertical",
 	"block.verticalslabs.vertical_birch_slab":"Losa de abedul vertical",

@@ -1,5 +1,6 @@
 package net.HearthianDev.verticalslabs;
 
+import net.HearthianDev.verticalslabs.block.VerticalSlab;
 import net.HearthianDev.verticalslabs.block.blockInit.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
@@ -21,6 +22,12 @@ public class VerticalSlabs implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        registerBlockItem(Cinnabar.ID, Cinnabar.VERTICAL_SLAB);
+        registerBlockItem(PolishedCinnabar.ID, PolishedCinnabar.VERTICAL_SLAB);
+        registerBlockItem(CinnabarBricks.ID, CinnabarBricks.VERTICAL_SLAB);
+        registerBlockItem(Sulfur.ID, Sulfur.VERTICAL_SLAB);
+        registerBlockItem(PolishedSulfur.ID, PolishedSulfur.VERTICAL_SLAB);
+        registerBlockItem(SulfurBricks.ID, SulfurBricks.VERTICAL_SLAB);
         registerBlockItem(AcaciaPlanks.ID, AcaciaPlanks.VERTICAL_SLAB);
         registerBlockItem(Andesite.ID, Andesite.VERTICAL_SLAB);
         registerBlockItem(BambooMosaic.ID, BambooMosaic.VERTICAL_SLAB);
@@ -87,6 +94,11 @@ public class VerticalSlabs implements ModInitializer {
         initCreativePlacement();
     }
 
+// TODO: make this generic
+//    public static void registerBlockItem(VerticalSlab block) {
+//        registerBlockItem(block.ID, block.VERTICAL_SLAB);
+//    }
+
     public static void registerBlockItem(String path, Block block) {
         ResourceKey<@NotNull Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, path));
         ResourceKey<@NotNull Block> blockKey = ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(MOD_ID, path));
@@ -106,6 +118,12 @@ public class VerticalSlabs implements ModInitializer {
 
     private void initCreativePlacement() {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(content -> {
+            content.insertBefore(Items.CINNABAR_SLAB, Cinnabar.VERTICAL_SLAB);
+            content.insertBefore(Items.CINNABAR_BRICK_SLAB, CinnabarBricks.VERTICAL_SLAB);
+            content.insertBefore(Items.POLISHED_CINNABAR_SLAB, PolishedCinnabar.VERTICAL_SLAB);
+            content.insertBefore(Items.SULFUR_SLAB, Sulfur.VERTICAL_SLAB);
+            content.insertBefore(Items.SULFUR_BRICK_SLAB, SulfurBricks.VERTICAL_SLAB);
+            content.insertBefore(Items.POLISHED_SULFUR_SLAB, PolishedSulfur.VERTICAL_SLAB);
             content.insertBefore(Items.ACACIA_SLAB, AcaciaPlanks.VERTICAL_SLAB);
             content.insertBefore(Items.ANDESITE_SLAB, Andesite.VERTICAL_SLAB);
             content.insertBefore(Items.BAMBOO_MOSAIC_SLAB, BambooMosaic.VERTICAL_SLAB);
@@ -117,7 +135,14 @@ public class VerticalSlabs implements ModInitializer {
             content.insertBefore(Items.COBBLED_DEEPSLATE_SLAB, CobbledDeepslate.VERTICAL_SLAB);
             content.insertBefore(Items.COBBLESTONE_SLAB, Cobblestone.VERTICAL_SLAB);
             content.insertBefore(Items.CRIMSON_SLAB, CrimsomPlanks.VERTICAL_SLAB);
-            content.insertBefore(Items.CUT_COPPER_SLAB, CutCopper.VERTICAL_SLAB);
+            content.insertBefore(Items.CUT_COPPER_SLAB.weathering().unaffected(), CutCopper.VERTICAL_SLAB);
+            content.insertBefore(Items.CUT_COPPER_SLAB.weathering().exposed(), ExposedCutCopper.VERTICAL_SLAB);
+            content.insertBefore(Items.CUT_COPPER_SLAB.weathering().oxidized(), OxidizedCutCopper.VERTICAL_SLAB);
+            content.insertBefore(Items.CUT_COPPER_SLAB.weathering().weathered(), WeatheredCutCopper.VERTICAL_SLAB);
+            content.insertBefore(Items.CUT_COPPER_SLAB.waxed().unaffected(), WaxedCutCopper.VERTICAL_SLAB);
+            content.insertBefore(Items.CUT_COPPER_SLAB.waxed().exposed(), WaxedExposedCutCopper.VERTICAL_SLAB);
+            content.insertBefore(Items.CUT_COPPER_SLAB.waxed().oxidized(), WaxedOxidizedCutCopper.VERTICAL_SLAB);
+            content.insertBefore(Items.CUT_COPPER_SLAB.waxed().weathered(), WaxedWeatheredCutCopper.VERTICAL_SLAB);
             content.insertBefore(Items.CUT_RED_SANDSTONE_SLAB, CutRedSandstone.VERTICAL_SLAB);
             content.insertBefore(Items.CUT_STANDSTONE_SLAB, CutSandstone.VERTICAL_SLAB);
             content.insertBefore(Items.DARK_OAK_SLAB, DarkOakPlanks.VERTICAL_SLAB);
@@ -126,7 +151,6 @@ public class VerticalSlabs implements ModInitializer {
             content.insertBefore(Items.DEEPSLATE_TILE_SLAB, DeepslateTiles.VERTICAL_SLAB);
             content.insertBefore(Items.DIORITE_SLAB, Diorite.VERTICAL_SLAB);
             content.insertBefore(Items.END_STONE_BRICK_SLAB, EndStoneBricks.VERTICAL_SLAB);
-            content.insertBefore(Items.EXPOSED_CUT_COPPER_SLAB, ExposedCutCopper.VERTICAL_SLAB);
             content.insertBefore(Items.GRANITE_SLAB, Granite.VERTICAL_SLAB);
             content.insertBefore(Items.JUNGLE_SLAB, JunglePlanks.VERTICAL_SLAB);
             content.insertBefore(Items.MANGROVE_SLAB, MangrovePlanks.VERTICAL_SLAB);
@@ -135,7 +159,6 @@ public class VerticalSlabs implements ModInitializer {
             content.insertBefore(Items.MUD_BRICK_SLAB, MudBricks.VERTICAL_SLAB);
             content.insertBefore(Items.NETHER_BRICK_SLAB, NetherBricks.VERTICAL_SLAB);
             content.insertBefore(Items.OAK_SLAB, OakPlanks.VERTICAL_SLAB);
-            content.insertBefore(Items.OXIDIZED_CUT_COPPER_SLAB, OxidizedCutCopper.VERTICAL_SLAB);
             content.insertBefore(Items.PALE_OAK_SLAB, PaleOakPlanks.VERTICAL_SLAB);
             content.insertBefore(Items.POLISHED_ANDESITE_SLAB, PolishedAndesite.VERTICAL_SLAB);
             content.insertBefore(Items.POLISHED_BLACKSTONE_SLAB, PolishedBlackstone.VERTICAL_SLAB);
@@ -162,11 +185,6 @@ public class VerticalSlabs implements ModInitializer {
             content.insertBefore(Items.TUFF_SLAB, Tuff.VERTICAL_SLAB);
             content.insertBefore(Items.TUFF_BRICK_SLAB, TuffBricks.VERTICAL_SLAB);
             content.insertBefore(Items.WARPED_SLAB, WarpedPlanks.VERTICAL_SLAB);
-            content.insertBefore(Items.WAXED_CUT_COPPER_SLAB, WaxedCutCopper.VERTICAL_SLAB);
-            content.insertBefore(Items.WAXED_EXPOSED_CUT_COPPER_SLAB, WaxedExposedCutCopper.VERTICAL_SLAB);
-            content.insertBefore(Items.WAXED_OXIDIZED_CUT_COPPER_SLAB, WaxedOxidizedCutCopper.VERTICAL_SLAB);
-            content.insertBefore(Items.WAXED_WEATHERED_CUT_COPPER_SLAB, WaxedWeatheredCutCopper.VERTICAL_SLAB);
-            content.insertBefore(Items.WEATHERED_CUT_COPPER_SLAB, WeatheredCutCopper.VERTICAL_SLAB);
         });
     }
 }

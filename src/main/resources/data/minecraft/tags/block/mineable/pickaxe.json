@@ -1,6 +1,12 @@
 {
   "replace": false,
   "values": [
+    "verticalslabs:vertical_cinnabar_slab",
+    "verticalslabs:vertical_cinnabar_brick_slab",
+    "verticalslabs:vertical_polished_cinnabar_slab",
+    "verticalslabs:vertical_sulfur_slab",
+    "verticalslabs:vertical_sulfur_brick_slab",
+    "verticalslabs:vertical_polished_sulfur_slab",
     "verticalslabs:vertical_stone_slab",
     "verticalslabs:vertical_smooth_stone_slab",
     "verticalslabs:vertical_sandstone_slab",

@@ -12,11 +12,13 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import static net.HearthianDev.verticalslabs.VerticalSlabs.MOD_ID;
 
+//TODO: remove sound, destroy and requires tool because is being copied from line 21
+
 public class OxidizedCutCopper {
     public static final String ID = "vertical_oxidized_cut_copper_slab";
     public static final Block VERTICAL_SLAB = new CopperVerticalSlabBlock(
         WeatheringCopper.WeatherState.UNAFFECTED,
-        BlockBehaviour.Properties.ofFullCopy(Blocks.OXIDIZED_CUT_COPPER_SLAB)
+        BlockBehaviour.Properties.ofFullCopy(Blocks.CUT_COPPER_SLAB.weathering().oxidized())
             .sound(SoundType.METAL)
             .destroyTime(2f)
             .requiresCorrectToolForDrops()

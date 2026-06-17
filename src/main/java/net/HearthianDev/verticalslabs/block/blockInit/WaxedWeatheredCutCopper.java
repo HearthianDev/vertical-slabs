@@ -16,7 +16,7 @@ public class WaxedWeatheredCutCopper {
     public static final String ID = "vertical_waxed_weathered_cut_copper_slab";
     public static final Block VERTICAL_SLAB = new CopperVerticalSlabBlock(
         WeatheringCopper.WeatherState.UNAFFECTED,
-        BlockBehaviour.Properties.ofFullCopy(Blocks.WAXED_WEATHERED_CUT_COPPER_SLAB)
+        BlockBehaviour.Properties.ofFullCopy(Blocks.CUT_COPPER_SLAB.waxed().weathered())
             .sound(SoundType.METAL)
             .destroyTime(2f)
             .requiresCorrectToolForDrops()

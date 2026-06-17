@@ -16,7 +16,7 @@ public class CutCopper {
     public static final String ID = "vertical_cut_copper_slab";
     public static final Block VERTICAL_SLAB = new CopperVerticalSlabBlock(
         WeatheringCopper.WeatherState.UNAFFECTED,
-        BlockBehaviour.Properties.ofFullCopy(Blocks.CUT_COPPER_SLAB)
+        BlockBehaviour.Properties.ofFullCopy(Blocks.CUT_COPPER_SLAB.weathering().unaffected())
             .sound(SoundType.METAL)
             .destroyTime(2f)
             .requiresCorrectToolForDrops()

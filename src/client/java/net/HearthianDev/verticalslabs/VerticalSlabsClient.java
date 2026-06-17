@@ -8,6 +8,12 @@ public class VerticalSlabsClient implements ClientModInitializer {
 //	public static final String MOD_ID = "verticalslabs";
 
 	public static AbstractVerticalSlabBlock[] BLOCKS = {
+            new AbstractCinnabar(),
+            new AbstractCinnabarBricks(),
+            new AbstractPolishedCinnabar(),
+            new AbstractSulfur(),
+            new AbstractSulfurBricks(),
+            new AbstractPolishedSulfur(),
             new AbstractAcaciaPlanks(),
 			new AbstractAndesite(),
 			new AbstractBambooMosaic(),
